@@ -4,46 +4,50 @@ import Logo from "../image/sinf.png"
 
 import { useState } from 'react';
 
-var total = 0;
-var usuario = "1043114873";
-var contrseña = "3784113401";
 
-var ultiDigito = usuario.slice(9,10);
-var primDigito = contrseña.slice(0,1);
+var usuario = "991109";
+var contrseña = "901199";
+
+var ultiDigito = usuario.slice(0,1);
+var primDigito = contrseña.slice(5,6);
 
 console.log(ultiDigito);
 console.log(primDigito);
 
-total = ultiDigito + primDigito;
+var total = Number(ultiDigito) + Number(primDigito);
 console.log(total);
 
+
 const Login = () => {
-  
-  const [logon, seLogon] = useState("false")
+
+  const [logon, setLogon] = useState("false")
   const [usu, setUsu] = useState('');
   const [pass, setPass] = useState('');
   const [captch, setCaptch] = useState('');
+
+  
 
   function iniciarsesion (e) {
     e.preventDefault();
     var txtusu = document.getElementById("txtusu").value
     var txtpass = document.getElementById("txtpass").value
     var captc = document.getElementById("captc").value
+    console.log(captch);
 
     console.log(setUsu)
     console.log(setPass)
     
-    if (txtusu.length === "" || txtpass.length === "" || captc.length === ""){
+    if (txtusu.length === 0 || txtpass.length === 0 || captc.length === 0){
       alert("Complete los datos faltantes")
     }else{
-      if(usu === usuario && pass === contrseña && captch === total){
-        seLogon("true");
+
+      if(usu === usuario && pass === contrseña && captch === total.toString()){
+        setLogon("true");
         document.getElementById("form_login").style.display = "none";
         alert("Sesion iniciada")
-        
       
       }else{
-        seLogon("false");
+        setLogon("false");
         alert("Error De usuario y/o contraseña");
         document.getElementById("txtusu").value = "";
         document.getElementById("txtpass").value = "";
@@ -73,10 +77,11 @@ const Login = () => {
                       <input type="password"  id='txtpass' className="txtpa" onChange={ (e) => setPass(e.target.value) }/>
               </div> 
 
-              <h5>Seguridad Captcha <br />   Ingrese el ultimo numero de tu Usuario y <br /> el primero de tu Contraseña</h5>
+              <h5>Seguridad Captcha <br />   Sume el primer numero del usuario que es: {usu.slice(0,1)} con <br /> el primero de la Contraseña que es: {pass.slice(5,6)}</h5>
               
 
               <div className='captcha'>
+
                 <input type="text"  id='captc' className="cap"  onChange={ (e) => setCaptch(e.target.value) }/>
               </div>
 
