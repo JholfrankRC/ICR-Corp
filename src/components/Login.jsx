@@ -29,15 +29,12 @@ const Login = () => {
 
   function iniciarsesion (e) {
     e.preventDefault();
-    var txtusu = document.getElementById("txtusu").value
-    var txtpass = document.getElementById("txtpass").value
-    var captc = document.getElementById("captc").value
-    console.log(captch);
+   
 
     console.log(setUsu)
     console.log(setPass)
     
-    if (txtusu.length === 0 || txtpass.length === 0 || captc.length === 0){
+    if ([usu, pass, captch].includes('')){
       alert("Complete los datos faltantes")
     }else{
 
@@ -48,14 +45,13 @@ const Login = () => {
       
       }else{
         setLogon("false");
-        alert("Error De usuario y/o contraseña");
+        alert("Error De usuario, contraseña y/o invalidos");
         document.getElementById("txtusu").value = "";
         document.getElementById("txtpass").value = "";
         document.getElementById("captc").value = "";
         document.getElementById("txtusu").focus();
       }
     }
-      
     }
  
   return (
