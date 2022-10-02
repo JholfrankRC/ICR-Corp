@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assets/login.css'
 import Logo from "../image/sinf.png"
+import Menu from "../components/Menu"
 
 import { useState } from 'react';
 
@@ -88,6 +89,7 @@ const Login = () => {
 
             </form>
 
+      { logon == "true" && <Menu  usu={usu}/> }
 
     </div>
       
