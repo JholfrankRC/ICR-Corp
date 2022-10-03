@@ -12,12 +12,12 @@ var contrseña = "901199";
 var ultiDigito = usuario.slice(0,1);
 var primDigito = contrseña.slice(5,6);
 
-console.log(ultiDigito);
-console.log(primDigito);
+/* console.log(ultiDigito);
+console.log(primDigito); */
 
 var total = Number(ultiDigito) + Number(primDigito);
-console.log(total);
-
+/* console.log(total);
+ */
 
 const Login = () => {
 
