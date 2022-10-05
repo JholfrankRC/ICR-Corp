@@ -21,15 +21,16 @@ const Menu = (props) => {
 
 /************************************ */
 const [Logout, setLogout] = useState('')
+const [Mensaje, setMensaje] = useState('')
 
   const submitLogout = (e) => {
     e.preventDefault();
 
     if(Logout === '9'){
-      alert('Codigo de confirmacion exitoso 😊')
+      setMensaje('Codigo de confirmacion exitoso 😊')
       location.reload();
     }else{
-      alert('Numero de confirmacion invalido')
+      setMensaje('Numero de confirmacion invalido')
    }
   }
 /************************************ */
@@ -48,7 +49,7 @@ const [Logout, setLogout] = useState('')
 
     <div className='contmenu'>
         <strong className="h3">
-         <p> Bienvenido Usuario : { props.usu }</p>
+         <p className='bienv'> Bienvenido Usuario : { props.usu }</p>
         </strong>
 
       <div className='menu'>
@@ -71,8 +72,8 @@ const [Logout, setLogout] = useState('')
             <input type='text' className='logout logout1' value={Logout} onChange={(e)=> { setLogout(e.target.value)}}/>
             <input type='submit' className='logout logout2'/>
           </form>
+          { Mensaje }
         </div>
-
       </div>}
 
     </div>

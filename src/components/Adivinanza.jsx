@@ -1,5 +1,9 @@
 import React, { useMemo, useState } from 'react'
 
+
+const muyp = 0
+const sobrep = 10
+
 export const Adivinanza = () => {
 
     const [Adivinanza, setAdivinanza] = useState('')
@@ -31,6 +35,15 @@ export const Adivinanza = () => {
             }else{
                 if(Adivinanza > NumAleatorio){
                     setMensaje('te pasaste')
+            }else{
+                if(Adivinanza < muyp){
+                    setMensaje('Estas muy por debajo')
+                }else{
+                    if(Adivinanza > sobrep){
+                        setMensaje('Te sobrepasaste')
+                    }
+                }
+
             }
 
         }

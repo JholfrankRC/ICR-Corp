@@ -64,12 +64,12 @@ const Login = () => {
 
             <form id="form_login">
 
-              <p>Username</p>
+              <p className='pusu'>Username</p>
               <div className='botones'>
                       <input type="text"  id='txtusu' className="txtus"  onChange={ (e) => setUsu(e.target.value) }/>
               </div>
 
-              <p>Password</p>
+              <p className='ppass'>Password</p>
               <div className='botones'>
                       <input type="password"  id='txtpass' className="txtpa" onChange={ (e) => setPass(e.target.value) }/>
               </div> 
