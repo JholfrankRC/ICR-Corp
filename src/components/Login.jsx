@@ -2,6 +2,7 @@ import React from 'react'
 import '../assets/login.css'
 import Logo from "../image/sinf.png"
 import Menu from "../components/Menu"
+import swal from 'sweetalert';
 
 import { useState } from 'react';
 
@@ -36,17 +37,25 @@ const Login = () => {
     console.log(setPass)
     
     if ([usu, pass, captch].includes('')){
-      alert("Complete los datos faltantes")
+      swal({
+        title:"Complete los datos faltantes",
+        icon:"error"
+      })
     }else{
 
       if(usu === usuario && pass === contrseña && captch === total.toString()){
         setLogon("true");
         document.getElementById("form_login").style.display = "none";
-        alert("Sesion iniciada")
+        swal({
+          title:"Sesion iniciada",
+          icon:"success"
+        })
       
       }else{
-        setLogon("false");
-        alert("Error De usuario, contraseña y/o invalidos");
+        swal({
+          title:"Error De usuario, contraseña y/o invalidos",
+          icon:"error"
+        })
         document.getElementById("txtusu").value = "";
         document.getElementById("txtpass").value = "";
         document.getElementById("captc").value = "";
@@ -54,7 +63,7 @@ const Login = () => {
       }
     }
     }
- 
+    
   return (
     <div className='contenedor'>
 

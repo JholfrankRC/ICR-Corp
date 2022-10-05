@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from 'react'
+import swal from 'sweetalert';
+import '../assets/adivinanza.css'
 
 
-const muyp = 0
-const sobrep = 10
+
+
 
 export const Adivinanza = () => {
 
@@ -22,7 +24,10 @@ export const Adivinanza = () => {
         console.log(NumAleatorio)
 
         if(Adivinanza == NumAleatorio){
-
+            swal({
+                title:`Adivinaste en el intento ${count}`,
+                icon:"success"
+              })
 
             setMensaje(`Adivinaste en el intento ${count}`)
             
@@ -30,28 +35,20 @@ export const Adivinanza = () => {
 
                 
         }else{
-            if(Adivinanza < NumAleatorio){
-                setMensaje('estas por debajo')
+            if(Adivinanza > 10 || Adivinanza < 0){
+                
+                setMensaje(`Estas fuera de los parametros`)
             }else{
                 if(Adivinanza > NumAleatorio){
-                    setMensaje('te pasaste')
-            }else{
-                if(Adivinanza < muyp){
-                    setMensaje('Estas muy por debajo')
+                    setMensaje(`Estas por encima`)
                 }else{
-                    if(Adivinanza > sobrep){
-                        setMensaje('Te sobrepasaste')
+                    if(Adivinanza < NumAleatorio){
+                        setMensaje(`Estas por debajo`)
                     }
                 }
-
             }
-
         }
-    }
-
-    setCount(count + 1)
-
-
+        setCount(count + 1)
     }
 
   return (

@@ -4,9 +4,8 @@
     align-items: center;
 
 }
-
 .contmenu{
-    background-color: #8a8a8a;
+    background-color: #9c9c9c;
     height: 320px;
     width: 300px;
     margin-top: 50px;
@@ -18,8 +17,10 @@ p{
 
 .menu{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .adivi, .cerrar{
@@ -31,8 +32,9 @@ p{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: auto;
+    margin-top: 35px;
     border-radius: 8px;
+    width: 150px;
 }
 
 .adivi{

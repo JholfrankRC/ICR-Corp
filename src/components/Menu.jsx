@@ -1,6 +1,7 @@
 import React from 'react'
 import "../assets/menu.css"
 import Logo from "../image/sinf.png"
+import "../assets/Logout.css"
 
 import { useState } from 'react';
 import { useNavigate, useRouteLoaderData } from 'react-router-dom';

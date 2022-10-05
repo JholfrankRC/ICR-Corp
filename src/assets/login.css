@@ -43,7 +43,7 @@ body{
     padding: 8px 50px;
     background: #ffffff;
     color: black;
-   
+    border-radius: 10px;
     border: 2px solid rgb(218, 217, 217);
 }
 
@@ -55,13 +55,27 @@ body{
 
 .env{
     background-color: #5c5c5c;
-    padding: 10px 120px;
-    margin-top: 30px;
+    padding: 15px 50px;
+    margin-top: 20px;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    
+}
+.env{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.env:hover {
+    background-color: #aaaaaa; /* Green */
+    color: white;
 }
 
 .pusu, .ppass{
     margin: 15px 20px 20px 30px;
     color: #5c5c5c;
+    
 }
 
 h5{

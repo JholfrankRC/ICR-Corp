@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-
+    margin-top: 5px;
 }
 
 .logout{
@@ -13,6 +13,7 @@
     padding: 20px;
     outline: none;
     border: none;
+    margin-top: 5px;
 }
 .logout1{
     background: white;
@@ -27,5 +28,8 @@
 
 .logout2:hover {
     background-color: #cecccc; /* Green */
+    color: white;
+}
+h2{
     color: white;
 }
